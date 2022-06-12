@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="68y-ou-RFf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Egg Boil Selection-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="eggBoilSelection" id="BYZ-38-t0r" customClass="eggBoilSelection" customModule="boilEgg" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Egg Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpP-Uc-IUp">
+                                <rect key="frame" x="168" y="88" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxF-li-g5D">
+                                <rect key="frame" x="30" y="188" width="134" height="31"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="etj-dg-Doc"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Fully Hard Boiled"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgN-Pt-OHR">
+                                <rect key="frame" x="284" y="188" width="100" height="31"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Hard Boiled"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d1-S7-Q84">
+                                <rect key="frame" x="30" y="309" width="134" height="31"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Uic-AL-M74"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Medium Boiled"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZN-HS-iyY">
+                                <rect key="frame" x="289" y="309" width="95" height="31"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Soft Boiled"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MZN-HS-iyY" secondAttribute="trailing" constant="30" id="1dY-Qy-gf5"/>
+                            <constraint firstItem="XxF-li-g5D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="2Xt-rG-6z6"/>
+                            <constraint firstItem="5d1-S7-Q84" firstAttribute="centerX" secondItem="XxF-li-g5D" secondAttribute="centerX" id="Dpe-Xj-YRS"/>
+                            <constraint firstItem="OpP-Uc-IUp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Fme-a6-KWO"/>
+                            <constraint firstItem="OpP-Uc-IUp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KeV-l8-zZ8"/>
+                            <constraint firstItem="5d1-S7-Q84" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="cFq-An-Oik"/>
+                            <constraint firstItem="UgN-Pt-OHR" firstAttribute="centerY" secondItem="XxF-li-g5D" secondAttribute="centerY" id="fYq-SN-GaB"/>
+                            <constraint firstItem="MZN-HS-iyY" firstAttribute="centerY" secondItem="5d1-S7-Q84" secondAttribute="centerY" id="fgd-LB-IES"/>
+                            <constraint firstItem="5d1-S7-Q84" firstAttribute="top" secondItem="XxF-li-g5D" secondAttribute="bottom" constant="90" id="o59-pP-xzd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UgN-Pt-OHR" secondAttribute="trailing" constant="30" id="oPg-b2-pRj"/>
+                            <constraint firstItem="XxF-li-g5D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="qrc-J7-UPP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BP3-cK-Fud"/>
+                    <connections>
+                        <outlet property="btnFullyHard" destination="XxF-li-g5D" id="6a7-tf-DZh"/>
+                        <outlet property="btnHard" destination="UgN-Pt-OHR" id="Qwa-u4-Y2c"/>
+                        <outlet property="btnMedium" destination="5d1-S7-Q84" id="05I-h6-nNH"/>
+                        <outlet property="btnSoft" destination="MZN-HS-iyY" id="EDH-fy-Yfv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="79.6875"/>
+        </scene>
+        <!--Egg Boil Timer-->
+        <scene sceneID="19X-HC-7bW">
+            <objects>
+                <viewController storyboardIdentifier="eggBoilTimer" id="p1H-Pb-QBQ" customClass="eggBoilTimer" customModule="boilEgg" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YvN-7N-ben">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Egg Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqX-Vl-Ghh">
+                                <rect key="frame" x="168" y="54" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8q-UY-dLg">
+                                <rect key="frame" x="133.5" y="236" width="147" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="selected egg name"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected egg name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="um3-dk-ovJ">
+                                <rect key="frame" x="133.5" y="125" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="remaining time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Er-Qb-kAb">
+                                <rect key="frame" x="150.5" y="327" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sft-dZ-efY">
+                                <rect key="frame" x="30" y="458" width="67.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Replay"/>
+                                <connections>
+                                    <action selector="btnRestart:" destination="p1H-Pb-QBQ" eventType="touchUpInside" id="lJb-n6-JPk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PL4-2t-gjJ">
+                                <rect key="frame" x="175.5" y="458" width="63.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Pause"/>
+                                <connections>
+                                    <action selector="btnPause:" destination="p1H-Pb-QBQ" eventType="touchUpInside" id="Q7r-Gt-kZh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGN-Jh-QYt">
+                                <rect key="frame" x="301.5" y="458" width="82.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Continue"/>
+                                <connections>
+                                    <action selector="btnContinue:" destination="p1H-Pb-QBQ" eventType="touchUpInside" id="2cp-VC-nyV"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6ve-b7-jjL">
+                                <rect key="frame" x="28" y="400" width="358" height="31"/>
+                                <connections>
+                                    <action selector="sliderAction:" destination="p1H-Pb-QBQ" eventType="valueChanged" id="YVa-n2-ijP"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i4w-ug-alY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PL4-2t-gjJ" firstAttribute="centerX" secondItem="6ve-b7-jjL" secondAttribute="centerX" id="5Wu-ML-y6z"/>
+                            <constraint firstItem="IqX-Vl-Ghh" firstAttribute="centerX" secondItem="i4w-ug-alY" secondAttribute="centerX" id="9ZK-vc-9Kd"/>
+                            <constraint firstItem="6ve-b7-jjL" firstAttribute="top" secondItem="0Er-Qb-kAb" secondAttribute="bottom" constant="52" id="9hg-nJ-oEq"/>
+                            <constraint firstItem="sft-dZ-efY" firstAttribute="top" secondItem="6ve-b7-jjL" secondAttribute="bottom" constant="28" id="Dbi-4s-SQ4"/>
+                            <constraint firstItem="IqX-Vl-Ghh" firstAttribute="top" secondItem="i4w-ug-alY" secondAttribute="top" constant="10" id="Ejg-k4-s9o"/>
+                            <constraint firstItem="GGN-Jh-QYt" firstAttribute="centerY" secondItem="PL4-2t-gjJ" secondAttribute="centerY" id="Hvu-ie-EEQ"/>
+                            <constraint firstItem="um3-dk-ovJ" firstAttribute="top" secondItem="IqX-Vl-Ghh" secondAttribute="bottom" constant="50" id="JN0-dz-ojz"/>
+                            <constraint firstItem="i4w-ug-alY" firstAttribute="trailing" secondItem="6ve-b7-jjL" secondAttribute="trailing" constant="30" id="P6I-oI-O2u"/>
+                            <constraint firstItem="um3-dk-ovJ" firstAttribute="centerX" secondItem="i4w-ug-alY" secondAttribute="centerX" id="R18-lX-aRx"/>
+                            <constraint firstItem="PL4-2t-gjJ" firstAttribute="centerY" secondItem="sft-dZ-efY" secondAttribute="centerY" id="Su6-1z-S2M"/>
+                            <constraint firstItem="6ve-b7-jjL" firstAttribute="centerX" secondItem="i4w-ug-alY" secondAttribute="centerX" id="bvo-Ub-z8x"/>
+                            <constraint firstItem="sft-dZ-efY" firstAttribute="leading" secondItem="6ve-b7-jjL" secondAttribute="leading" id="by5-sJ-mH6"/>
+                            <constraint firstItem="i4w-ug-alY" firstAttribute="trailing" secondItem="GGN-Jh-QYt" secondAttribute="trailing" constant="30" id="c5D-az-hnq"/>
+                            <constraint firstItem="f8q-UY-dLg" firstAttribute="centerX" secondItem="i4w-ug-alY" secondAttribute="centerX" id="d1t-p7-QAN"/>
+                            <constraint firstItem="6ve-b7-jjL" firstAttribute="leading" secondItem="i4w-ug-alY" secondAttribute="leading" constant="30" id="fae-wy-4MD"/>
+                            <constraint firstItem="f8q-UY-dLg" firstAttribute="top" secondItem="um3-dk-ovJ" secondAttribute="bottom" constant="90" id="sjN-01-VQl"/>
+                            <constraint firstItem="0Er-Qb-kAb" firstAttribute="centerX" secondItem="i4w-ug-alY" secondAttribute="centerX" id="yRy-rE-aTX"/>
+                            <constraint firstItem="0Er-Qb-kAb" firstAttribute="top" secondItem="f8q-UY-dLg" secondAttribute="bottom" constant="60" id="yso-fr-HPB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnBoilName" destination="f8q-UY-dLg" id="p0j-ZO-Qx1"/>
+                        <outlet property="lblBoilName" destination="um3-dk-ovJ" id="1U8-8X-mtF"/>
+                        <outlet property="lblTimer" destination="0Er-Qb-kAb" id="VZW-ta-lVJ"/>
+                        <outlet property="slider" destination="6ve-b7-jjL" id="9VY-sV-Qqr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VxY-vR-GE8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1697.1014492753625" y="79.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gNw-Q0-BCQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="68y-ou-RFf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="reK-01-rg0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yXH-gm-Nha"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KDQ-1e-cQF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="79.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
