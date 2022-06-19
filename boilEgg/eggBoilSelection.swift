@@ -25,10 +25,27 @@ class eggBoilSelection: UIViewController {
     
     var boilType : BoilType = .fullyHard
     
+    private let boilSelectionLabel: UILabel = {
+       
+        let label = UILabel()
+        label.text = "How Do You Like Your Egg"
+        label.textAlignment = .center
+        
+        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+        
+    }()
+    
+    
+    
     private let fullyHardImgView: UIImageView = {
        
         let imageView = UIImageView()
         imageView.image = UIImage(named: "fullyHardBoil")
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
         
@@ -48,6 +65,8 @@ class eggBoilSelection: UIViewController {
        
         let imageView = UIImageView()
         imageView.image = UIImage(named: "hardBoil")
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
         
@@ -67,6 +86,8 @@ class eggBoilSelection: UIViewController {
        
         let imageView = UIImageView()
         imageView.image = UIImage(named: "mediumBoil")
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
         
@@ -86,6 +107,8 @@ class eggBoilSelection: UIViewController {
        
         let imageView = UIImageView()
         imageView.image = UIImage(named: "softBoil")
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
         
@@ -112,7 +135,7 @@ class eggBoilSelection: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        view.addSubview(boilSelectionLabel)
         view.addSubview(fullyHardImgView)
         view.addSubview(fullHardButton)
         
@@ -126,6 +149,10 @@ class eggBoilSelection: UIViewController {
         view.addSubview(softButton)
         
         view.backgroundColor = .white
+        
+        title = "Egg Boil Types"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
         
         
         fullHardButton.tag = 0
@@ -146,9 +173,19 @@ class eggBoilSelection: UIViewController {
     
     func applyConstraints() {
         
+        
+        
+        let boilSelectionLabelConst = [
+            boilSelectionLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+            boilSelectionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            boilSelectionLabel.heightAnchor.constraint(equalToConstant: 30)
+        ]
+        
+        NSLayoutConstraint.activate(boilSelectionLabelConst)
+        
         let fullyHardBoilConst = [
-            fullyHardImgView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
-            fullyHardImgView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
+            fullyHardImgView.topAnchor.constraint(equalTo: boilSelectionLabel.topAnchor, constant: 50),
+            fullyHardImgView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 60),
             fullyHardImgView.bottomAnchor.constraint(equalTo: fullyHardImgView.bottomAnchor),
             fullyHardImgView.widthAnchor.constraint(equalToConstant: 100),
             fullyHardImgView.heightAnchor.constraint(equalToConstant: 100)
@@ -168,8 +205,8 @@ class eggBoilSelection: UIViewController {
         
         
         let hardBoilConst = [
-            hardImgView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
-            hardImgView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
+            hardImgView.topAnchor.constraint(equalTo: boilSelectionLabel.topAnchor, constant: 50),
+            hardImgView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -60),
             hardImgView.widthAnchor.constraint(equalToConstant: 100),
             hardImgView.heightAnchor.constraint(equalToConstant: 100)
         ]
@@ -188,7 +225,7 @@ class eggBoilSelection: UIViewController {
         
         let mediumBoilConst = [
             mediumImgView.topAnchor.constraint(equalTo: fullyHardImgView.bottomAnchor, constant: 20),
-            mediumImgView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
+            mediumImgView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 60),
             mediumImgView.widthAnchor.constraint(equalToConstant: 100),
             mediumImgView.heightAnchor.constraint(equalToConstant: 100)
         ]
@@ -207,7 +244,7 @@ class eggBoilSelection: UIViewController {
         
         let softBoilConst = [
             softImgView.topAnchor.constraint(equalTo: hardImgView.bottomAnchor, constant: 20),
-            softImgView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
+            softImgView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -60),
             softImgView.widthAnchor.constraint(equalToConstant: 100),
             softImgView.heightAnchor.constraint(equalToConstant: 100)
         ]

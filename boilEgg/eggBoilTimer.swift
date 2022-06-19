@@ -27,26 +27,33 @@ class eggBoilTimer: UIViewController {
        
         let view = UIView()
         
+        view.layer.cornerRadius = 20
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .yellow.withAlphaComponent(0.5)
+        view.backgroundColor = .yellow.withAlphaComponent(0.3)
         
         return view
     }()
     
-    private let eggNameLabel: UILabel = {
+    private let eggImgView: UIImageView = {
        
-        let label = UILabel()
+        let image = UIImageView()
         
-        label.text = "Selected Egg Name"
-        label.translatesAutoresizingMaskIntoConstraints = false
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 20
+        image.translatesAutoresizingMaskIntoConstraints = false
         
-        return label
+        return image
         
     }()
     
+
     private let selectedEggNameLabel: UILabel = {
        
         let label = UILabel()
+        label.textAlignment = .center
+        
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -58,6 +65,10 @@ class eggBoilTimer: UIViewController {
         let label = UILabel()
         
         label.text = "Remaining Time"
+        label.textAlignment = .center
+        
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -80,10 +91,10 @@ class eggBoilTimer: UIViewController {
        
         let button = UIButton()
         
-        let image = UIImage(systemName: "playpause", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+        let image = UIImage(systemName: "playpause", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))
         button.tintColor = .white
         button.setImage(image, for: .normal)
-        button.layer.cornerRadius = 30
+        button.layer.cornerRadius = 20
         
         button.backgroundColor = .systemOrange
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -97,10 +108,10 @@ class eggBoilTimer: UIViewController {
     private let pauseButton: UIButton = {
        
         let button = UIButton()
-        let image = UIImage(systemName: "pause", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+        let image = UIImage(systemName: "pause", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))
         button.tintColor = .white
         button.setImage(image, for: .normal)
-        button.layer.cornerRadius = 35
+        button.layer.cornerRadius = 20
         
         button.backgroundColor = .systemOrange
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -115,10 +126,10 @@ class eggBoilTimer: UIViewController {
     private let continueButton: UIButton = {
         
         let button = UIButton()
-        let image = UIImage(systemName: "play", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+        let image = UIImage(systemName: "play", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))
         button.tintColor = .white
         button.setImage(image, for: .normal)
-        button.layer.cornerRadius = 30
+        button.layer.cornerRadius = 20
         
         button.backgroundColor = .systemOrange
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -137,7 +148,7 @@ class eggBoilTimer: UIViewController {
         
         view.addSubview(backView)
         
-        backView.addSubview(eggNameLabel)
+        backView.addSubview(eggImgView)
         backView.addSubview(selectedEggNameLabel)
         backView.addSubview(remainingTimeLabel)
         backView.addSubview(remainingTimeSlider)
@@ -145,7 +156,7 @@ class eggBoilTimer: UIViewController {
         backView.addSubview(pauseButton)
         backView.addSubview(continueButton)
         
-        view.backgroundColor = .systemOrange
+        view.backgroundColor = .white.withAlphaComponent(0.9)
         
         title = "Egg Timer"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -170,6 +181,10 @@ class eggBoilTimer: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        timer.invalidate()
+    }
+    
     @objc func sliderValueDidChange(_ sender:UISlider)
     {
         
@@ -183,31 +198,33 @@ class eggBoilTimer: UIViewController {
         let sectionViewConst = [
             backView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
             backView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            backView.heightAnchor.constraint(equalToConstant: 300),
+            backView.heightAnchor.constraint(equalToConstant: 350),
             backView.widthAnchor.constraint(equalToConstant: 400)
         ]
         
         NSLayoutConstraint.activate(sectionViewConst)
         
         
-        let eggNameLabelConst = [
-            eggNameLabel.topAnchor.constraint(equalTo: backView.topAnchor, constant: 10),
-            eggNameLabel.centerXAnchor.constraint(equalTo: backView.centerXAnchor),
-            eggNameLabel.heightAnchor.constraint(equalToConstant: 30)
-        ]
-        
-        NSLayoutConstraint.activate(eggNameLabelConst)
-        
-        
+
         let selectedEggNameConst = [
-            selectedEggNameLabel.topAnchor.constraint(equalTo: eggNameLabel.bottomAnchor, constant: 20),
+            selectedEggNameLabel.topAnchor.constraint(equalTo: backView.topAnchor, constant: 10),
             selectedEggNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            selectedEggNameLabel.heightAnchor.constraint(equalToConstant: 30)
         ]
         
         NSLayoutConstraint.activate(selectedEggNameConst)
         
+        let eggImgViewConst = [
+            eggImgView.topAnchor.constraint(equalTo: selectedEggNameLabel.topAnchor, constant: 40),
+            eggImgView.centerXAnchor.constraint(equalTo: selectedEggNameLabel.centerXAnchor),
+            eggImgView.heightAnchor.constraint(equalToConstant: 90),
+            eggImgView.widthAnchor.constraint(equalToConstant: 90)
+        ]
+        
+        NSLayoutConstraint.activate(eggImgViewConst)
+        
         let remaingTimeConst = [
-            remainingTimeLabel.topAnchor.constraint(equalTo: selectedEggNameLabel.bottomAnchor, constant: 20),
+            remainingTimeLabel.topAnchor.constraint(equalTo: eggImgView.bottomAnchor, constant: 20),
             remainingTimeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ]
         
@@ -226,8 +243,8 @@ class eggBoilTimer: UIViewController {
         let replayButtonConst = [
             replayButton.topAnchor.constraint(equalTo: remainingTimeSlider.bottomAnchor, constant: 20),
             replayButton.trailingAnchor.constraint(equalTo: pauseButton.trailingAnchor, constant: 60),
-            replayButton.widthAnchor.constraint(equalToConstant: 60),
-            replayButton.heightAnchor.constraint(equalToConstant: 60)
+            replayButton.widthAnchor.constraint(equalToConstant: 50),
+            replayButton.heightAnchor.constraint(equalToConstant: 50)
         ]
         
         NSLayoutConstraint.activate(replayButtonConst)
@@ -235,8 +252,8 @@ class eggBoilTimer: UIViewController {
         let pauseButtonConst = [
             pauseButton.topAnchor.constraint(equalTo: remainingTimeSlider.bottomAnchor, constant: 20),
             pauseButton.centerXAnchor.constraint(equalTo: remainingTimeSlider.centerXAnchor),
-            pauseButton.widthAnchor.constraint(equalToConstant: 60),
-            pauseButton.heightAnchor.constraint(equalToConstant: 60)
+            pauseButton.widthAnchor.constraint(equalToConstant: 50),
+            pauseButton.heightAnchor.constraint(equalToConstant: 50)
         ]
         
         NSLayoutConstraint.activate(pauseButtonConst)
@@ -244,8 +261,8 @@ class eggBoilTimer: UIViewController {
         let continueButtonConst = [
             continueButton.topAnchor.constraint(equalTo: remainingTimeSlider.bottomAnchor, constant: 20),
             continueButton.leadingAnchor.constraint(equalTo: pauseButton.leadingAnchor, constant: -60),
-            continueButton.widthAnchor.constraint(equalToConstant: 60),
-            continueButton.heightAnchor.constraint(equalToConstant: 60)
+            continueButton.widthAnchor.constraint(equalToConstant: 50),
+            continueButton.heightAnchor.constraint(equalToConstant: 50)
         ]
         
         NSLayoutConstraint.activate(continueButtonConst)
@@ -267,12 +284,16 @@ class eggBoilTimer: UIViewController {
         switch boilType {
         case .fullyHard:
             selectedEggNameLabel.text = "Fully Hard Boiled"
+            eggImgView.image = UIImage(named: "fullyHardBoil")
         case .hard:
             selectedEggNameLabel.text = "Hard Boiled"
+            eggImgView.image = UIImage(named: "hardBoil")
         case .medium:
             selectedEggNameLabel.text = "Medium Boiled"
+            eggImgView.image = UIImage(named: "mediumBoil")
         case .soft:
             selectedEggNameLabel.text = "Soft Boiled"
+            eggImgView.image = UIImage(named: "softBoil")
         }
     }
     
@@ -293,6 +314,7 @@ class eggBoilTimer: UIViewController {
         
         if seconds == 0 {
             timer.invalidate()
+            showAlert()
         }
         
         
@@ -331,18 +353,18 @@ class eggBoilTimer: UIViewController {
             
     }
     
-    /*
+    
     func showAlert() {
-        let alertController: UIAlertController = UIAlertController(title: "MESSAGE", message: "ALERT", preferredStyle: .alert)
+        let alertController: UIAlertController = UIAlertController(title: "FINISHED", message: "You can eat now", preferredStyle: .alert)
         
-        let alert = UIAlertAction(title: "OK", style: .default) { _ in
+        let alert = UIAlertAction(title: "Thanks", style: .default) { _ in
             
             self.navigationController?.popToRootViewController(animated: true)
         }
         
         alertController.addAction(alert)
         self.present(alertController, animated: true, completion: nil)
-    } */
+    }
     
     
 
